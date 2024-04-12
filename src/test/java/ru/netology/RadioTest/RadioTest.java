@@ -73,8 +73,9 @@ public class RadioTest {
         Assertions.assertEquals(expensted, actual);
     }
 
-    @CsvFileSource(files = "src/test/resources/increaseVolumeUpperBound.csv")
-    public void increaseVolumeUpperBound(int expensted) {
+    @Test
+    public void increaseVolumeUpperBound() {
+        int expensted = 100;
         int actual = rad.increaseVolume(100);
 
         Assertions.assertEquals(expensted, actual);
