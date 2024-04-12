@@ -20,7 +20,7 @@ public class Radio {
 
 
     // Переключается станции назад
-    public int prevStation() {
+    public int prevStation(int numberCurrentRadioStation) {
         if (numberCurrentRadioStation == 0) {
             numberCurrentRadioStation = 9;
         } else {
@@ -29,7 +29,7 @@ public class Radio {
         return numberCurrentRadioStation;
     }
 
-    public int selectionStation(int station) {
+    public int selectionStation(int station, int numberCurrentRadioStation) {
         if (station >= 0 && station <= 9) {
             numberCurrentRadioStation = station;
         } else {
@@ -38,7 +38,7 @@ public class Radio {
         return numberCurrentRadioStation;
     }
 
-    public int increaseVolume() {
+    public int increaseVolume(int volumeSound) {
         if (volumeSound < 100) {
             volumeSound++;
         }
@@ -46,7 +46,7 @@ public class Radio {
 
     }
 
-    public int reduceVolume() {
+    public int reduceVolume(int volumeSound) {
         if (volumeSound > 0) {
             volumeSound--;
         }
