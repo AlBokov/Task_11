@@ -1,13 +1,15 @@
 package ru.netology.radio;
 
 
+import org.w3c.dom.ls.LSOutput;
+
 public class Radio {
-    public int numberCurrentRadioStation;
-    public int volumeSound;
+    private int numberCurrentRadioStation;
+    private int volumeSound;
 
 
-    // Переключается станицию вперед
-    public int nextStation(int numberCurrentRadioStation) {
+    // Переключение станции вперед
+    public int nextStation() {
         if (numberCurrentRadioStation == 9) {
             numberCurrentRadioStation = 0;
             return numberCurrentRadioStation;
@@ -15,12 +17,11 @@ public class Radio {
             numberCurrentRadioStation++;
             return numberCurrentRadioStation;
         }
-
     }
 
 
-    // Переключается станции назад
-    public int prevStation(int numberCurrentRadioStation) {
+    // Переключение станции назад
+    public int prevStation() {
         if (numberCurrentRadioStation == 0) {
             numberCurrentRadioStation = 9;
         } else {
@@ -29,7 +30,8 @@ public class Radio {
         return numberCurrentRadioStation;
     }
 
-    public int selectionStation(int station, int numberCurrentRadioStation) {
+    // Переключение станции во выбору
+    public int selectionStation(int station) {
         if (station >= 0 && station <= 9) {
             numberCurrentRadioStation = station;
         } else {
@@ -38,20 +40,32 @@ public class Radio {
         return numberCurrentRadioStation;
     }
 
-    public int increaseVolume(int volumeSound) {
+
+    // Установка звука
+    public int volume(int target) {
+        if (target >= 0 && target <= 100) {
+            volumeSound = target;
+        }
+        return volumeSound;
+    }
+
+    // Прибавление звука на +1
+    public int increaseVolume() {
         if (volumeSound < 100) {
-            volumeSound++;
+            volumeSound = volumeSound + 1;
+            return volumeSound;
+        } else {
+            return volumeSound;
         }
-        return volumeSound;
-
     }
 
-    public int reduceVolume(int volumeSound) {
+    // Убавление звука на -1
+    public int reduceVolume() {
         if (volumeSound > 0) {
-            volumeSound--;
+            volumeSound = volumeSound - 1;
+            return volumeSound;
+        } else {
+            return volumeSound;
         }
-        return volumeSound;
-
     }
-
 }

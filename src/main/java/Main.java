@@ -5,6 +5,19 @@ import ru.netology.radio.Radio;
 
 public class Main {
     public static void main(String[] args) {
+        Radio rad = new Radio();
+
+
+        System.out.println(rad.volume(60));
+        rad.reduceVolume();
+        rad.reduceVolume();
+        System.out.println(rad.volume(103));
+        rad.increaseVolume();
+        rad.increaseVolume();
+        System.out.println();
+
+
+
 
 //        radio.nextStation();
 //        radio.nextStation();
